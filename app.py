@@ -1,109 +1,171 @@
 import os
 import streamlit as st
 
-# --------------------------------------------------
-# Page configuration
-# --------------------------------------------------
+
+# ============================================================
+# PAGE CONFIG
+# ============================================================
+
 st.set_page_config(
     page_title="Insight Copilot",
     layout="wide"
 )
 
-# --------------------------------------------------
-# Load GROQ API key
-# --------------------------------------------------
+
+# ============================================================
+# LOAD GROQ API KEY FROM STREAMLIT SECRETS
+# IMPORTANT: This happens BEFORE importing graph
+# ============================================================
+
 GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")
 
 if not GROQ_API_KEY:
-    st.error("GROQ_API_KEY is not configured in Streamlit Secrets.")
+    st.error(
+        "GROQ_API_KEY is missing. "
+        "Please add it in Streamlit Cloud → Manage app → Settings → Secrets."
+    )
     st.stop()
 
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
-# --------------------------------------------------
-# Import graph AFTER API key is loaded
-# --------------------------------------------------
+
+# ============================================================
+# IMPORT GRAPH AFTER API KEY IS SET
+# ============================================================
+
 from graph import compiled_graph
 
 
-# --------------------------------------------------
-# Dataset information
-# --------------------------------------------------
+# ============================================================
+# DATASET INFORMATION
+# ============================================================
+
 @st.cache_data
 def get_dataset_info():
     from tools import describe_dataset
     return describe_dataset()
 
 
-# --------------------------------------------------
-# Initialize session state
-# --------------------------------------------------
+# ============================================================
+# SESSION STATE
+# ============================================================
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-# --------------------------------------------------
-# Sidebar with dataset information
-# --------------------------------------------------
+# ============================================================
+# SIDEBAR
+# ============================================================
+
 with st.sidebar:
+
     st.header("Dataset Info")
 
-    info = get_dataset_info()
+    try:
+        info = get_dataset_info()
 
-    st.write(f"Rows: {info['row_count']}")
-    st.write(
-        f"Date range: {info['date_range'][0]} to {info['date_range'][1]}"
-    )
-    st.write(
-        f"Categories: {', '.join(info['categories'])}"
-    )
-    st.write(
-        f"Regions: {', '.join(info['regions'])}"
-    )
+        st.write(f"Rows: {info['row_count']}")
+
+        st.write(
+            f"Date range: "
+            f"{info['date_range'][0]} to "
+            f"{info['date_range'][1]}"
+        )
+
+        st.write(
+            f"Categories: "
+            f"{', '.join(info['categories'])}"
+        )
+
+        st.write(
+            f"Regions: "
+            f"{', '.join(info['regions'])}"
+        )
+
+    except Exception as e:
+
+        st.error("Could not load dataset information.")
+
+        st.exception(e)
 
 
-# --------------------------------------------------
-# Example questions
-# --------------------------------------------------
+# ============================================================
+# TITLE
+# ============================================================
+
+st.title("Insight Copilot")
+
+st.write(
+    "Ask questions about the sales dataset using natural language."
+)
+
+
+# ============================================================
+# EXAMPLE QUESTIONS
+# ============================================================
+
 st.markdown("### Example Questions")
 
 col1, col2, col3, col4 = st.columns(4)
 
 examples = [
     "Seasonal trend in Technology sales",
+    "Tell me about the sales data",
+    "Which category has the highest sales?",
+    "What are the regional sales trends?"
 ]
 
 clicked_example = None
 
-for i, (col, ex) in enumerate(
-    zip([col1, col2, col3, col4], examples)
+
+for i, (col, example) in enumerate(
+    zip(
+        [col1, col2, col3, col4],
+        examples
+    )
 ):
-    if col.button(ex, key=f"example_{i}"):
-        clicked_example = ex
+
+    if col.button(
+        example,
+        key=f"example_{i}",
+        use_container_width=True
+    ):
+
+        clicked_example = example
 
 
-# --------------------------------------------------
-# Chat input
-# --------------------------------------------------
-user_input = st.chat_input(
-    "Ask about sales data..."
-) or clicked_example
+# ============================================================
+# CHAT INPUT
+# ============================================================
+
+user_input = (
+    st.chat_input("Ask about sales data...")
+    or clicked_example
+)
 
 
-# --------------------------------------------------
-# Display conversation history
-# --------------------------------------------------
-for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
+# ============================================================
+# DISPLAY PREVIOUS MESSAGES
+# ============================================================
+
+for message in st.session_state.messages:
+
+    with st.chat_message(message["role"]):
+
+        st.markdown(message["content"])
 
 
-# --------------------------------------------------
-# Process user question
-# --------------------------------------------------
+# ============================================================
+# PROCESS USER QUESTION
+# ============================================================
+
 if user_input:
 
-    # Add user message
+    # --------------------------------------------------------
+    # Add user message to history
+    # --------------------------------------------------------
+
     st.session_state.messages.append(
         {
             "role": "user",
@@ -111,36 +173,93 @@ if user_input:
         }
     )
 
+
+    # --------------------------------------------------------
+    # Display user message
+    # --------------------------------------------------------
+
     with st.chat_message("user"):
+
         st.markdown(user_input)
 
-    # Run agent
+
+    # --------------------------------------------------------
+    # Run AI agent
+    # --------------------------------------------------------
+
     with st.chat_message("assistant"):
 
-        with st.spinner("Analyzing..."):
+        with st.spinner("Analyzing sales data..."):
 
             try:
+
                 result = compiled_graph.invoke(
                     {
                         "user_query": user_input,
-                        "messages": st.session_state.messages[:-1],
+
+                        "messages": (
+                            st.session_state.messages[:-1]
+                        ),
+
                         "plan": None,
+
                         "tool_results": [],
+
                         "final_answer": None,
+
                         "error": None
                     }
                 )
 
+
+                # ------------------------------------------------
+                # Get final answer
+                # ------------------------------------------------
+
                 answer = result.get(
                     "final_answer",
-                    "No answer generated."
+                    "No answer was generated."
                 )
+
+
+                # ------------------------------------------------
+                # If graph returned an error
+                # ------------------------------------------------
+
+                if result.get("error"):
+
+                    answer = (
+                        f"Agent error: "
+                        f"{result['error']}"
+                    )
+
 
             except Exception as e:
 
-                answer = f"Error: {str(e)}"
+                # ------------------------------------------------
+                # Show actual error instead of hiding it
+                # ------------------------------------------------
+
+                answer = (
+                    f"Application error: "
+                    f"{type(e).__name__}: {str(e)}"
+                )
+
+                st.error("The AI agent encountered an error.")
+
+                st.exception(e)
+
+
+        # --------------------------------------------------------
+        # Display answer
+        # --------------------------------------------------------
 
         st.markdown(answer)
+
+
+        # --------------------------------------------------------
+        # Save assistant response
+        # --------------------------------------------------------
 
         st.session_state.messages.append(
             {
