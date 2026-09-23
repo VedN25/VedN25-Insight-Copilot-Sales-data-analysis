@@ -1,314 +1,219 @@
-# Insight Copilot - Sales Analytics Agent
+<div align="center">
 
-A LangGraph-based AI agent for sales data analysis with natural language queries, automatic chart generation, and conversational memory.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,50:6d28d9,100:a78bfa&height=200&section=header&text=Ved%20Nawale&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20%2F%20ML%20Engineer%20%C2%B7%20Production%20Systems&descSize=18&descAlignY=55" width="100%"/>
 
-## Features
+<a href="https://github.com/VedN25">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&lines=AI+%2F+ML+Engineer;Computer+Vision+%C2%B7+Face+Anti-Spoofing;LLM+Systems+%C2%B7+RAG+%C2%B7+Agents;Turning+models+into+production+systems" alt="Typing SVG" />
+</a>
 
-- **Natural Language Queries**: Ask questions about sales data in plain English
-- **Automatic Visualization**: Generates Plotly charts (bar, line, scatter, area) based on query intent
-- **Conversational Memory**: Remembers context for follow-up questions
-- **Safe Data Access**: Constrained pandas queries with column whitelisting
-- **Multi-step Reasoning**: Planner → Tool Execution → Synthesizer architecture
+<br/>
 
-## Architecture
+<img src="https://img.shields.io/badge/B.Tech-AI%20%26%20ML%20'26-6d28d9?style=for-the-badge&logo=googlescholar&logoColor=white" />
+<img src="https://img.shields.io/badge/Symbiosis%20Institute%20of%20Technology-Pune-4c1d95?style=for-the-badge&logo=googlemaps&logoColor=white" />
+<img src="https://img.shields.io/badge/Published-CNN%20Research%20Paper-7c3aed?style=for-the-badge&logo=readthedocs&logoColor=white" />
 
+<br/><br/>
+
+<a href="https://www.linkedin.com/in/vednawale/">
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+<a href="mailto:vednawale1@gmail.com">
+  <img src="https://img.shields.io/badge/Email-Contact-6d28d9?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+<a href="https://github.com/VedN25">
+  <img src="https://img.shields.io/badge/GitHub-Follow-1a1a2e?style=for-the-badge&logo=github&logoColor=a78bfa" />
+</a>
+
+<br/><br/>
+
+<img src="https://komarev.com/ghpvc/?username=VedN25&style=flat-square&color=6d28d9&label=Profile+Views" />
+<img src="https://img.shields.io/github/followers/VedN25?style=flat-square&color=7c3aed&labelColor=1a1a2e" />
+
+</div>
+
+---
+
+## 🧠 About Me
+
+AI/ML engineer focused on taking models past the notebook stage — into APIs, containers, and systems people actually use.
+
+- 🔭 **Currently building:** LLM inference cost optimization and AI-powered video generation
+- 🏭 **Industry experience:** 3 internships — computer vision (face authentication & anti-spoofing), demand forecasting (LSTM), and applied AI/ML
+- 📄 **Published:** peer-reviewed research on CNN-based plant disease classification
+- ⚙️ **How I work:** simplicity first, surgical changes, measurable outcomes
+- 📬 **Open to:** AI/ML Engineer · ML Infrastructure · Applied AI roles
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+**Languages & ML**
+
+<img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch,sklearn,opencv&theme=dark" />
+
+**Backend & Data**
+
+<img src="https://skillicons.dev/icons?i=fastapi,flask,mysql,postgres&theme=dark" />
+
+**Cloud, DevOps & Tooling**
+
+<img src="https://skillicons.dev/icons?i=docker,gcp,git,github,linux,vscode&theme=dark" />
+
+</div>
+
+---
+
+## 🎯 AI / ML Expertise
+
+<div align="center">
+
+| Domain | Focus | Details |
+|:---|:---:|:---|
+| **Computer Vision** | ⭐⭐⭐⭐ | Face recognition, anti-spoofing (RetinaFace, ArcFace, CDCN), CNN classification, ONNX deployment |
+| **LLM Systems** | ⭐⭐⭐⭐ | RAG pipelines, agent orchestration, inference cost optimization, prompt routing |
+| **ML Engineering** | ⭐⭐⭐⭐ | FastAPI model serving, Docker, ONNX Runtime, pipeline design |
+| **Time-Series Forecasting** | ⭐⭐⭐ | LSTM demand forecasting for manufacturing |
+| **Quantitative ML** | ⭐⭐⭐ | Modern Portfolio Theory + ML for portfolio optimization |
+
+</div>
+
+---
+
+## 🚀 Featured Projects
+
+<details>
+<summary><b>🔐 Face Authentication & Anti-Spoofing System</b></summary>
+<br/>
+
+Production-style facial authentication pipeline with liveness detection — built from my internship work in biometric security.
+
+| | |
+|:---|:---|
+| **Stack** | Python · RetinaFace · ArcFace · CDCN · ONNX Runtime · FastAPI · Docker |
+| **Problem** | Face recognition alone is trivially fooled by photos and replay attacks |
+| **Approach** | Detection → alignment → embedding → anti-spoofing check, served as an API |
+| **Repository** | [VedN25/face-auth-system](https://github.com/VedN25/face-auth-system) |
+
+</details>
+
+<details>
+<summary><b>🏢 Enterprise AI Knowledge Platform</b></summary>
+<br/>
+
+Enterprise RAG platform with AI agents — document ingestion, vector retrieval, and agent workflows behind an API.
+
+| | |
+|:---|:---|
+| **Stack** | FastAPI · LangGraph · Qdrant · PostgreSQL · Docker · Kubernetes · AWS |
+| **Problem** | Enterprise knowledge is scattered and unsearchable by meaning |
+| **Approach** | RAG pipeline + agent orchestration over a vector store, containerized for deployment |
+| **Repository** | [VedN25/Enterprise-ai-knowledge-platform](https://github.com/VedN25/Enterprise-ai-knowledge-platform) |
+
+</details>
+
+<details>
+<summary><b>📈 AI Portfolio Optimization</b></summary>
+<br/>
+
+Portfolio optimization combining Modern Portfolio Theory with machine learning.
+
+| | |
+|:---|:---|
+| **Stack** | Python · scikit-learn · pandas · NumPy |
+| **Problem** | Naive allocation ignores risk-adjusted, data-driven weighting |
+| **Approach** | MPT efficient-frontier optimization augmented with ML-based signals |
+| **Repository** | [VedN25/portfolio-optimization-ai](https://github.com/VedN25/portfolio-optimization-ai) |
+
+</details>
+
+<details>
+<summary><b>🎬 Idea-2-Video</b> <i>(in progress)</i></summary>
+<br/>
+
+Automated short-form video generation: idea → LLM script → AI voiceover → stock footage → rendered MP4.
+
+| | |
+|:---|:---|
+| **Stack** | Python · LLM APIs · ElevenLabs · ffmpeg |
+| **Status** | 🚧 Active development |
+| **Repository** | [VedN25/Idea-2-video](https://github.com/VedN25/Idea-2-video) |
+
+</details>
+
+<details>
+<summary><b>🤝 AI-Council — Multi-Model Orchestration</b> <i>(contributor)</i></summary>
+<br/>
+
+Python library that coordinates multiple AI models to solve complex problems. `pip install ai-council-orchestrator`
+
+| | |
+|:---|:---|
+| **Stack** | Python · Multi-LLM orchestration · PyPI packaging |
+| **Repository** | [VedN25/Ai-Council](https://github.com/VedN25/Ai-Council) |
+
+</details>
+
+---
+
+## 💼 Experience
+
+**AI/ML Intern · Rich Industries** — *Aug 2025 – Jan 2026*
+Applied AI/ML engineering across production use cases.
+
+**Computer Vision Intern · Intsys Software** — *2025*
+Built a facial authentication and anti-spoofing pipeline (RetinaFace, ArcFace, CDCN) with ONNX-optimized inference served via FastAPI in Docker.
+
+**ML Intern · Food Manufacturing Company** — *2024*
+Developed LSTM-based demand forecasting models to support production planning.
+
+---
+
+## 📄 Publications
+
+- **CNN-Based Plant Disease Classification** — peer-reviewed publication; achieved 95% classification accuracy across disease categories.
+
+---
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=VedN25&show_icons=true&theme=midnight-purple&hide_border=true&bg_color=1a1a2e&title_color=a78bfa&icon_color=7c3aed" height="165" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=VedN25&layout=compact&theme=midnight-purple&hide_border=true&bg_color=1a1a2e&title_color=a78bfa" height="165" />
+
+<br/><br/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VedN25&theme=tokyo-night&hide_border=true&bg_color=1a1a2e&color=a78bfa&line=7c3aed&point=ffffff" width="95%" />
+
+</div>
+
+---
+
+## 🔭 Current Focus
+
+```yaml
+learning:    [LLM inference optimization, GCP (Vertex AI, Cloud Run), system design]
+building:    [TokenSense — LLM inference cost control plane, Idea-2-Video MVP]
+exploring:   [AI evaluation infrastructure, trust & safety tooling]
+open_to:     [AI/ML Engineer roles, ML Infrastructure, collaborations]
 ```
-User Question
-     ↓
-┌──────────┐
-│   Planner   │  ← LLM creates execution plan
-└──────────┘
-       ↓
-┌──────────┐
-│    Tools    │  ← Execute: query_data, compute_stats, make_chart, describe_dataset
-└──────────┘
-       ↓
-┌──────────┐
-│ Synthesizer │  ← LLM generates natural language answer
-└──────────┘
-       ↓
-   Answer + Chart
-```
 
-## Quick Start
+---
 
-### 1. Install Dependencies
+## 🤝 Connect
 
-```bash
-pip install -r requirements.txt
-```
+<div align="center">
 
-### 2. Configure API Key
+<a href="mailto:vednawale1@gmail.com"><img src="https://img.shields.io/badge/Gmail-vednawale1%40gmail.com-6d28d9?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/vednawale/"><img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="https://github.com/VedN25"><img src="https://img.shields.io/badge/GitHub-VedN25-1a1a2e?style=for-the-badge&logo=github&logoColor=a78bfa" /></a>
 
-Copy the example secrets file and add your Groq API key:
+<br/><br/>
 
-```bash
-cp .streamlit/secrets.toml.example .streamlit/secrets.toml
-# Edit .streamlit/secrets.toml and add your GROQ_API_KEY
-```
+*"Models are easy. Systems are the hard part."*
 
-Or set as environment variable:
-```bash
-set GROQ_API_KEY=your-key-here   # Windows PowerShell
-# or
-export GROQ_API_KEY=your-key-here   # Linux/macOS
-```
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:a78bfa,50:6d28d9,100:1a1a2e&height=120&section=footer" width="100%"/>
 
-### 3. Run the App
-
-```bash
-streamlit run app.py
-```
-
-## Example Questions
-
-- "What are the total sales by region?"
-- "Show me top 5 products by revenue"
-- "Sales trend over time"
-- "Which region has highest profit margin?"
-- "Compare sales across categories"
-- "Growth rate of revenue by quarter"
-- "Top salesperson by units sold"
-- "Show me the dataset schema"
-
-## Project Structure
-
-```
-xcaliber-assignment/
-├── app.py                 # Streamlit chat interface
-├── graph.py               # LangGraph agent (Planner → Tools → Synthesizer)
-├── tools.py               # Tool implementations (query_data, make_chart, describe_dataset, compute_stats)
-├── data/
-│   └── loader.py          # Dataset loading (CSV or Excel)
-├── .streamlit/
-│   ├── secrets.toml.example
-│   └── config.toml
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
-
-## Dataset
-
-The agent works with a sales dataset provided as either:
-- `data/global_superstore.csv` (legacy format)
-- `data/Sales_Dataset_2024.xlsx` (current format)
-
-The loader (`data/loader.py`) reads whichever file exists. The current Excel format contains columns:
-- `Date` (datetime)
-- `Region` (string): North, South, East, West
-- `Product` (string)
-- `Salesperson` (string)
-- `Units_Sold` (int)
-- `Unit_Price` (float)
-- `Category` (string): Electronics, Accessories, Office
-- `Revenue` (float)
-- `Cost` (float)
-- `Profit` (float)
-
-## Tools
-
-| Tool | Description |
-|------|-------------|
-| `describe_dataset` | Explore schema, columns, date ranges, unique values |
-| `query_data` | Filter, group, aggregate with pandas (supports date_range, compare, time_granularity, top_n, limit) |
-| `compute_stats` | Sum, mean, median, growth_rate, top_n, etc. on previous query results |
-| `make_chart` | Generate Plotly bar, line, scatter, area charts (returns DataFrame ready for `st.bar_chart`) |
-
-## LLM Configuration
-
-- **Provider**: Groq
-- **Model**: `openai/gpt-oss-120b`
-- **Features**: JSON mode for structured planning, retry logic with exponential backoff
-
-## Testing
-
-```bash
-# Run tool tests (if test file exists)
-python -m pytest tests/ -v
-
-# Quick sanity check of the agent graph
-python graph.py
-```
-
-## Deployment
-
-### Streamlit Cloud
-
-1. Push to GitHub
-2. Connect to Streamlit Cloud
-3. Add `GROQ_API_KEY` in Settings → Secrets
-4. Deploy
-
-### Docker
-
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8501
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
-```
-
-## License
-
-MIT License - Built for Gen AI Internship Take-Home Assignment
-﻿# Insight Copilot - Sales Analytics Agent
-
-A LangGraph-based AI agent for sales data analysis with natural language queries, automatic chart generation, and conversational memory.
-
-## Features
-
-- **Natural Language Queries**: Ask questions about sales data in plain English
-- **Automatic Visualization**: Generates Plotly charts (bar, line, scatter, area) based on query intent
-- **Conversational Memory**: Remembers context for follow-up questions
-- **Safe Data Access**: Constrained pandas queries with column whitelisting
-- **Multi-step Reasoning**: Planner → Tool Execution → Synthesizer architecture
-
-## Architecture
-
-`
-User Question
-     ↓
-┌────────────┐
-│   Planner   │  ← LLM creates execution plan
-└────────────┘
-       ↓
-┌────────────┐
-│    Tools    │  ← Execute: query_data, compute_stats, make_chart, describe_dataset
-└────────────┘
-       ↓
-┌────────────┐
-│ Synthesizer │  ← LLM generates natural language answer
-└────────────┘
-       ↓
-   Answer + Chart
-`
-
-## Quick Start
-
-### 1. Install Dependencies
-
-`ash
-pip install -r requirements.txt
-`
-
-### 2. Configure API Key
-
-Copy the example secrets file and add your Groq API key:
-
-`ash
-cp .streamlit/secrets.toml.example .streamlit/secrets.toml
-# Edit .streamlit/secrets.toml and add your GROQ_API_KEY
-`
-
-Or set as environment variable:
-`ash
-set GROQ_API_KEY=your-key-here   # Windows PowerShell
-# or
-export GROQ_API_KEY=your-key-here   # Linux/macOS
-`
-
-### 3. Run the App
-
-`ash
-streamlit run app.py
-`
-
-## Example Questions
-
--  What are the total sales by region?
-- Show me top 5 products by revenue
-- Sales trend over time
-- Which region has highest profit margin?
-- Compare sales across categories
-- Growth rate of revenue by quarter
-- Top salesperson by units sold
-- Show me the dataset schema
-
-## Project Structure
-
-`
-xcaliber-assignment/
-├── app.py                 # Streamlit chat interface
-├── graph.py               # LangGraph agent (Planner → Tools → Synthesizer)
-├── tools.py               # Tool implementations (query_data, make_chart, describe_dataset, compute_stats)
-├── data/
-│   └── loader.py          # Dataset loading (CSV or Excel)
-├── .streamlit/
-│   ├── secrets.toml.example
-│   └── config.toml
-├── requirements.txt
-├── .gitignore
-└── README.md
-`
-
-## Dataset
-
-The agent works with a sales dataset provided as either:
-- data/global_superstore.csv (legacy format)
-- data/Sales_Dataset_2024.xlsx (current format)
-
-The loader (data/loader.py) reads whichever file exists. The current Excel format contains columns:
-- Date (datetime)
-- Region (string): North, South, East, West
-- Product (string)
-- Salesperson (string)
-- Units_Sold (int)
-- Unit_Price (float)
-- Category (string): Electronics, Accessories, Office
-- Revenue (float)
-- Cost (float)
-- Profit (float)
-
-## Tools
-
-| Tool | Description |
-|------|-------------|
-| describe_dataset | Explore schema, columns, date ranges, unique values |
-| query_data | Filter, group, aggregate with pandas (supports date_range, compare, time_granularity, top_n, limit) |
-| compute_stats | Sum, mean, median, growth_rate, top_n, etc. on previous query results |
-| make_chart | Generate Plotly bar, line, scatter, area charts (returns DataFrame ready for st.bar_chart) |
-
-## LLM Configuration
-
-- **Provider**: Groq
-- **Model**: openai/gpt-oss-120b
-- **Features**: JSON mode for structured planning, retry logic with exponential backoff
-
-## Testing
-
-`ash
-# Run tool tests (if test file exists)
-python -m pytest tests/ -v
-
-# Quick sanity check of the agent graph
-python graph.py
-`
-
-## Deployment
-
-### Streamlit Cloud
-
-1. Push to GitHub
-2. Connect to Streamlit Cloud
-3. Add GROQ_API_KEY in Settings → Secrets
-4. Deploy
-
-### Docker
-
-`dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8501
-CMD [streamlit, run, app.py, --server.port=8501, --server.address=0.0.0.0]
-`
-
-## License
-
-MIT License - Built for Gen AI Internship Take-Home Assignment
+</div>
