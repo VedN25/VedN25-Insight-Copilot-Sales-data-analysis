@@ -1,219 +1,563 @@
-<div align="center">
+Insight Copilot - Sales Data Analysis Agent
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,50:6d28d9,100:a78bfa&height=200&section=header&text=Ved%20Nawale&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20%2F%20ML%20Engineer%20%C2%B7%20Production%20Systems&descSize=18&descAlignY=55" width="100%"/>
+An AI-powered sales data analysis assistant built using Python, LangGraph, Groq, Streamlit, Pandas, and OpenPyXL.
 
-<a href="https://github.com/VedN25">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&lines=AI+%2F+ML+Engineer;Computer+Vision+%C2%B7+Face+Anti-Spoofing;LLM+Systems+%C2%B7+RAG+%C2%B7+Agents;Turning+models+into+production+systems" alt="Typing SVG" />
-</a>
+Insight Copilot allows users to ask natural-language questions about a sales dataset and receive analytical answers through an agentic workflow.
 
-<br/>
+Live Demo
 
-<img src="https://img.shields.io/badge/B.Tech-AI%20%26%20ML%20'26-6d28d9?style=for-the-badge&logo=googlescholar&logoColor=white" />
-<img src="https://img.shields.io/badge/Symbiosis%20Institute%20of%20Technology-Pune-4c1d95?style=for-the-badge&logo=googlemaps&logoColor=white" />
-<img src="https://img.shields.io/badge/Published-CNN%20Research%20Paper-7c3aed?style=for-the-badge&logo=readthedocs&logoColor=white" />
+Streamlit Cloud:
 
-<br/><br/>
+https://vedn25-insight-copilot-sales-data-analysis-jbwapp565ycdzhqrkxq.streamlit.app/
 
-<a href="https://www.linkedin.com/in/vednawale/">
-  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-<a href="mailto:vednawale1@gmail.com">
-  <img src="https://img.shields.io/badge/Email-Contact-6d28d9?style=for-the-badge&logo=gmail&logoColor=white" />
-</a>
-<a href="https://github.com/VedN25">
-  <img src="https://img.shields.io/badge/GitHub-Follow-1a1a2e?style=for-the-badge&logo=github&logoColor=a78bfa" />
-</a>
+GitHub Repository
 
-<br/><br/>
+https://github.com/VedN25/VedN25-Insight-Copilot-Sales-data-analysis
 
-<img src="https://komarev.com/ghpvc/?username=VedN25&style=flat-square&color=6d28d9&label=Profile+Views" />
-<img src="https://img.shields.io/github/followers/VedN25?style=flat-square&color=7c3aed&labelColor=1a1a2e" />
+Project Overview
 
-</div>
+Insight Copilot is a conversational AI application designed to analyze structured sales data using natural-language queries.
 
----
+Instead of manually filtering spreadsheets or writing data-analysis queries, users can ask questions such as:
 
-## 🧠 About Me
+Which category has the highest sales?
 
-AI/ML engineer focused on taking models past the notebook stage — into APIs, containers, and systems people actually use.
+Tell me about the sales data
 
-- 🔭 **Currently building:** LLM inference cost optimization and AI-powered video generation
-- 🏭 **Industry experience:** 3 internships — computer vision (face authentication & anti-spoofing), demand forecasting (LSTM), and applied AI/ML
-- 📄 **Published:** peer-reviewed research on CNN-based plant disease classification
-- ⚙️ **How I work:** simplicity first, surgical changes, measurable outcomes
-- 📬 **Open to:** AI/ML Engineer · ML Infrastructure · Applied AI roles
+Seasonal trend in Technology sales
 
----
+The application processes the user's question through a LangGraph-based agent workflow, uses data-analysis tools to retrieve information from the sales dataset, and generates a natural-language response.
 
-## 🛠️ Tech Stack
+Key Features
 
-<div align="center">
+Natural-language sales data analysis
 
-**Languages & ML**
+LangGraph-based agent workflow
 
-<img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch,sklearn,opencv&theme=dark" />
+Excel dataset analysis
 
-**Backend & Data**
+Pandas-based data processing
 
-<img src="https://skillicons.dev/icons?i=fastapi,flask,mysql,postgres&theme=dark" />
+Interactive Streamlit interface
 
-**Cloud, DevOps & Tooling**
+Example questions for quick testing
 
-<img src="https://skillicons.dev/icons?i=docker,gcp,git,github,linux,vscode&theme=dark" />
+Dataset information displayed in the sidebar
 
-</div>
+Conversation history
 
----
+Error handling
 
-## 🎯 AI / ML Expertise
+Secure API key management using Streamlit Secrets
 
-<div align="center">
+Public Streamlit Cloud deployment
 
-| Domain | Focus | Details |
-|:---|:---:|:---|
-| **Computer Vision** | ⭐⭐⭐⭐ | Face recognition, anti-spoofing (RetinaFace, ArcFace, CDCN), CNN classification, ONNX deployment |
-| **LLM Systems** | ⭐⭐⭐⭐ | RAG pipelines, agent orchestration, inference cost optimization, prompt routing |
-| **ML Engineering** | ⭐⭐⭐⭐ | FastAPI model serving, Docker, ONNX Runtime, pipeline design |
-| **Time-Series Forecasting** | ⭐⭐⭐ | LSTM demand forecasting for manufacturing |
-| **Quantitative ML** | ⭐⭐⭐ | Modern Portfolio Theory + ML for portfolio optimization |
+Technology Stack
 
-</div>
+Technology
 
----
+Purpose
 
-## 🚀 Featured Projects
+Python
 
-<details>
-<summary><b>🔐 Face Authentication & Anti-Spoofing System</b></summary>
-<br/>
+Core programming language
 
-Production-style facial authentication pipeline with liveness detection — built from my internship work in biometric security.
+LangGraph
 
-| | |
-|:---|:---|
-| **Stack** | Python · RetinaFace · ArcFace · CDCN · ONNX Runtime · FastAPI · Docker |
-| **Problem** | Face recognition alone is trivially fooled by photos and replay attacks |
-| **Approach** | Detection → alignment → embedding → anti-spoofing check, served as an API |
-| **Repository** | [VedN25/face-auth-system](https://github.com/VedN25/face-auth-system) |
+Agent workflow orchestration
 
-</details>
+Groq
 
-<details>
-<summary><b>🏢 Enterprise AI Knowledge Platform</b></summary>
-<br/>
+LLM inference
 
-Enterprise RAG platform with AI agents — document ingestion, vector retrieval, and agent workflows behind an API.
+OpenAI Python Client
 
-| | |
-|:---|:---|
-| **Stack** | FastAPI · LangGraph · Qdrant · PostgreSQL · Docker · Kubernetes · AWS |
-| **Problem** | Enterprise knowledge is scattered and unsearchable by meaning |
-| **Approach** | RAG pipeline + agent orchestration over a vector store, containerized for deployment |
-| **Repository** | [VedN25/Enterprise-ai-knowledge-platform](https://github.com/VedN25/Enterprise-ai-knowledge-platform) |
+LLM API client
 
-</details>
+Pandas
 
-<details>
-<summary><b>📈 AI Portfolio Optimization</b></summary>
-<br/>
+Data processing
 
-Portfolio optimization combining Modern Portfolio Theory with machine learning.
+OpenPyXL
 
-| | |
-|:---|:---|
-| **Stack** | Python · scikit-learn · pandas · NumPy |
-| **Problem** | Naive allocation ignores risk-adjusted, data-driven weighting |
-| **Approach** | MPT efficient-frontier optimization augmented with ML-based signals |
-| **Repository** | [VedN25/portfolio-optimization-ai](https://github.com/VedN25/portfolio-optimization-ai) |
+Excel file handling
 
-</details>
+Plotly
 
-<details>
-<summary><b>🎬 Idea-2-Video</b> <i>(in progress)</i></summary>
-<br/>
+Data visualization
 
-Automated short-form video generation: idea → LLM script → AI voiceover → stock footage → rendered MP4.
+Streamlit
 
-| | |
-|:---|:---|
-| **Stack** | Python · LLM APIs · ElevenLabs · ffmpeg |
-| **Status** | 🚧 Active development |
-| **Repository** | [VedN25/Idea-2-video](https://github.com/VedN25/Idea-2-video) |
+Web interface
 
-</details>
+Pytest
 
-<details>
-<summary><b>🤝 AI-Council — Multi-Model Orchestration</b> <i>(contributor)</i></summary>
-<br/>
+Testing
 
-Python library that coordinates multiple AI models to solve complex problems. `pip install ai-council-orchestrator`
+Git/GitHub
 
-| | |
-|:---|:---|
-| **Stack** | Python · Multi-LLM orchestration · PyPI packaging |
-| **Repository** | [VedN25/Ai-Council](https://github.com/VedN25/Ai-Council) |
+Version control
 
-</details>
+Streamlit Cloud
 
----
+Deployment
 
-## 💼 Experience
+Architecture
+
+                    User
+                      |
+                      v
+             Streamlit Interface
+                      |
+                      v
+                 User Query
+                      |
+                      v
+               LangGraph Agent
+                      |
+             +--------+--------+
+             |                 |
+             v                 v
+          Planner         Data Tools
+                               |
+                               v
+                       Sales Dataset
+                       Excel File
+                               |
+                               v
+                       Analysis Results
+             |                 |
+             +--------+--------+
+                      |
+                      v
+                Final Answer
+                      |
+                      v
+              Streamlit Interface
 
-**AI/ML Intern · Rich Industries** — *Aug 2025 – Jan 2026*
-Applied AI/ML engineering across production use cases.
+Agent Workflow
 
-**Computer Vision Intern · Intsys Software** — *2025*
-Built a facial authentication and anti-spoofing pipeline (RetinaFace, ArcFace, CDCN) with ONNX-optimized inference served via FastAPI in Docker.
+The application uses LangGraph to organize the agent workflow.
 
-**ML Intern · Food Manufacturing Company** — *2024*
-Developed LSTM-based demand forecasting models to support production planning.
+User Question
+      |
+      v
+Planning
+      |
+      v
+Determine Required Analysis
+      |
+      v
+Execute Data Analysis Tools
+      |
+      v
+Process Results
+      |
+      v
+Generate Final Answer
+      |
+      v
+Display Answer
 
----
+This approach separates the reasoning process from the underlying deterministic data-analysis operations.
 
-## 📄 Publications
+Dataset
 
-- **CNN-Based Plant Disease Classification** — peer-reviewed publication; achieved 95% classification accuracy across disease categories.
+The application uses:
 
----
+data/Sales_Dataset_2024.xlsx
 
-## 📊 GitHub Analytics
+The dataset is loaded using Pandas and OpenPyXL.
 
-<div align="center">
+The application can retrieve information such as:
 
-<img src="https://github-readme-stats.vercel.app/api?username=VedN25&show_icons=true&theme=midnight-purple&hide_border=true&bg_color=1a1a2e&title_color=a78bfa&icon_color=7c3aed" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=VedN25&layout=compact&theme=midnight-purple&hide_border=true&bg_color=1a1a2e&title_color=a78bfa" height="165" />
+Number of rows
 
-<br/><br/>
+Date range
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VedN25&theme=tokyo-night&hide_border=true&bg_color=1a1a2e&color=a78bfa&line=7c3aed&point=ffffff" width="95%" />
+Product categories
 
-</div>
+Regions
 
----
+Sales information
 
-## 🔭 Current Focus
+Dataset information is displayed in the Streamlit sidebar.
 
-```yaml
-learning:    [LLM inference optimization, GCP (Vertex AI, Cloud Run), system design]
-building:    [TokenSense — LLM inference cost control plane, Idea-2-Video MVP]
-exploring:   [AI evaluation infrastructure, trust & safety tooling]
-open_to:     [AI/ML Engineer roles, ML Infrastructure, collaborations]
-```
+Example Questions
 
----
+The application provides three example questions for quick testing:
 
-## 🤝 Connect
+Which category has the highest sales?
 
-<div align="center">
+Tell me about the sales data
 
-<a href="mailto:vednawale1@gmail.com"><img src="https://img.shields.io/badge/Gmail-vednawale1%40gmail.com-6d28d9?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-<a href="https://www.linkedin.com/in/vednawale/"><img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-<a href="https://github.com/VedN25"><img src="https://img.shields.io/badge/GitHub-VedN25-1a1a2e?style=for-the-badge&logo=github&logoColor=a78bfa" /></a>
+Seasonal trend in Technology sales
 
-<br/><br/>
+Users can also enter their own questions through the chat input.
 
-*"Models are easy. Systems are the hard part."*
+Project Structure
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:a78bfa,50:6d28d9,100:1a1a2e&height=120&section=footer" width="100%"/>
+VedN25-Insight-Copilot-Sales-data-analysis/
+│
+├── data/
+│   ├── Sales_Dataset_2024.xlsx
+│   ├── __init__.py
+│   └── loader.py
+│
+├── .streamlit/
+│   └── secrets.toml.example
+│
+├── app.py
+├── graph.py
+├── tools.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .env.example
 
-</div>
+File Descriptions
+
+app.py
+
+Main Streamlit application responsible for:
+
+Streamlit UI
+
+API key loading
+
+Dataset information
+
+Example questions
+
+Chat interface
+
+Agent execution
+
+Response display
+
+Error handling
+
+graph.py
+
+Contains the LangGraph agent workflow, including:
+
+Agent state
+
+Planning
+
+Tool execution
+
+Workflow orchestration
+
+Final answer generation
+
+tools.py
+
+Contains the data-analysis tools used by the agent to interact with the sales dataset.
+
+data/loader.py
+
+Responsible for loading and preparing the sales dataset.
+
+data/Sales_Dataset_2024.xlsx
+
+The primary sales dataset used by the application.
+
+requirements.txt
+
+Contains the Python dependencies required to run the project.
+
+Installation
+
+1. Clone the Repository
+
+git clone https://github.com/VedN25/VedN25-Insight-Copilot-Sales-data-analysis.git
+
+Move into the project directory:
+
+cd VedN25-Insight-Copilot-Sales-data-analysis
+
+2. Create a Virtual Environment
+
+Windows
+
+python -m venv .venv
+.venv\Scripts\activate
+
+macOS/Linux
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+3. Install Dependencies
+
+pip install -r requirements.txt
+
+API Key Configuration
+
+The application requires a Groq API key.
+
+For local development, configure the environment variable:
+
+GROQ_API_KEY=your_api_key_here
+
+Do not commit your real API key to GitHub.
+
+Streamlit Cloud Secrets
+
+For Streamlit Cloud deployment, add the API key under:
+
+Streamlit Cloud -> App Settings -> Secrets
+
+Use:
+
+GROQ_API_KEY = "your_actual_api_key"
+
+The application reads the secret using:
+
+GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")
+
+The actual API key is never stored in the GitHub repository.
+
+Running Locally
+
+After activating the virtual environment and installing dependencies:
+
+python -m streamlit run app.py
+
+The application will normally be available at:
+
+http://localhost:8501
+
+Deployment
+
+The application is deployed using Streamlit Community Cloud.
+
+Deployment workflow:
+
+GitHub Repository
+       |
+       v
+Streamlit Cloud
+       |
+       v
+Install requirements.txt
+       |
+       v
+Load Streamlit Secrets
+       |
+       v
+Run app.py
+       |
+       v
+Public Application
+
+Live Application
+
+https://vedn25-insight-copilot-sales-data-analysis-jbwapp565ycdzhqrkxq.streamlit.app/
+
+The deployed application should be tested using an incognito/private browser window before submission.
+
+Security
+
+The following files and directories should not be committed:
+
+.env
+.streamlit/secrets.toml
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+API keys are stored through Streamlit Secrets rather than hard-coded into the application.
+
+.gitignore
+
+The project uses .gitignore to prevent sensitive credentials and generated files from being committed.
+
+.env
+.streamlit/secrets.toml
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+Pytest Cache
+
+The .pytest_cache/ directory contains data generated by pytest's cache plugin.
+
+It provides functionality for options such as:
+
+--lf
+
+--ff
+
+cache fixture
+
+The .pytest_cache/ directory should not be committed to version control.
+
+For more information, see the official pytest documentation:
+
+https://docs.pytest.org/en/stable/how-to/cache.html
+
+Testing
+
+The project includes Pytest dependencies.
+
+Run tests using:
+
+pytest
+
+For detailed output:
+
+pytest -v
+
+Dependency Versions
+
+The project uses pinned dependency versions for more predictable deployments.
+
+langgraph==0.2.34
+openai==1.35.0
+httpx==0.27.2
+pandas==2.2.3
+openpyxl==3.1.5
+plotly==5.24.1
+streamlit==1.39.0
+pytest==8.3.3
+pytest-asyncio==0.23.8
+
+The httpx version is explicitly pinned to maintain compatibility with the selected OpenAI client version.
+
+Example Workflow
+
+For a question such as:
+
+Which category has the highest sales?
+
+the application follows this process:
+
+1. User enters the question
+        |
+        v
+2. LangGraph receives the query
+        |
+        v
+3. Agent determines the required analysis
+        |
+        v
+4. Relevant data-analysis tool is executed
+        |
+        v
+5. Sales data is analyzed
+        |
+        v
+6. Result is passed to the response generation step
+        |
+        v
+7. Natural-language answer is displayed
+
+Design Decisions
+
+Why LangGraph?
+
+LangGraph provides a structured framework for building agent workflows.
+
+It allows the application to separate planning, tool execution, and response generation instead of placing all logic into a single function.
+
+Why Pandas?
+
+Pandas provides efficient operations for structured tabular data.
+
+It is used for:
+
+Data loading
+
+Filtering
+
+Grouping
+
+Aggregation
+
+Statistical calculations
+
+Date-based analysis
+
+Why Streamlit?
+
+Streamlit provides a simple way to build an interactive interface around the AI agent without requiring a separate frontend framework.
+
+Why Groq?
+
+Groq provides fast LLM inference, making it suitable for an interactive data-analysis application.
+
+Error Handling
+
+The application includes error handling for:
+
+Missing API credentials
+
+Dataset loading errors
+
+Agent execution errors
+
+API errors
+
+Unexpected runtime errors
+
+Errors are displayed in the Streamlit interface without terminating the complete application.
+
+Conversation Handling
+
+The Streamlit application maintains conversation history for display.
+
+For agent execution, the application avoids unnecessarily sending the complete previous conversation history to the LLM.
+
+This helps reduce unnecessarily large LLM requests and lowers the risk of exceeding message or completion limits.
+
+Future Improvements
+
+Potential improvements include:
+
+Additional sales-analysis tools
+
+Automatic chart generation
+
+More advanced visualizations
+
+Query classification
+
+Improved conversation memory
+
+Larger dataset support
+
+Automated agent evaluation
+
+More comprehensive unit tests
+
+Response quality evaluation
+
+Authentication
+
+Better caching
+
+Advanced analytics and forecasting
+
+Internship Submission
+
+Hosted Application
+
+https://vedn25-insight-copilot-sales-data-analysis-jbwapp565ycdzhqrkxq.streamlit.app/
+
+GitHub Repository
+
+https://github.com/VedN25/VedN25-Insight-Copilot-Sales-data-analysis
+
+Short Write-up
+
+Insight Copilot is an agentic AI application that allows users to analyze sales data using natural-language questions. The system uses LangGraph to orchestrate the agent workflow, Groq for LLM inference, Pandas and OpenPyXL for structured data processing, and Streamlit for the user interface.
+
+The main design decision was to combine an LLM-based agent with deterministic data-analysis tools. This allows the system to use natural language for understanding the user's intent while relying on the actual sales dataset for analytical results.
+
+The application is deployed on Streamlit Cloud and uses Streamlit Secrets to securely manage the Groq API key.
