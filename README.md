@@ -44,7 +44,7 @@ Example questions for quick testing
 
 Dataset information displayed in the sidebar
 
-Conversation history
+Chat history displayed for the current Streamlit session
 
 Error handling
 
@@ -84,7 +84,7 @@ Excel file handling
 
 Plotly
 
-Data visualization
+Listed as a visualization dependency; the current Streamlit interface does not render charts.
 
 Streamlit
 
@@ -104,62 +104,55 @@ Deployment
 
 Architecture
 
-                    User
-                      |
-                      v
-             Streamlit Interface
-                      |
-                      v
-                 User Query
-                      |
-                      v
-               LangGraph Agent
-                      |
-             +--------+--------+
-             |                 |
-             v                 v
-          Planner         Data Tools
-                               |
-                               v
-                       Sales Dataset
-                       Excel File
-                               |
-                               v
-                       Analysis Results
-             |                 |
-             +--------+--------+
-                      |
-                      v
-                Final Answer
-                      |
-                      v
-              Streamlit Interface
+```text
+User
+  |
+  v
+Streamlit app (app.py)
+  |  reads GROQ_API_KEY from Streamlit Secrets
+  |  displays the question and chat history
+  v
+LangGraph (graph.py)
+  |
+  v
+Planner (Groq LLM) -- needs_tools=false --> Synthesizer (Groq LLM)
+  |
+  +-- needs_tools=true --> Tool executor
+                              |
+                              v
+                     Data tools (tools.py)
+                              |
+                              v
+                  Pandas DataFrame loaded from
+                  data/Sales_Dataset_2024.xlsx
+                              |
+                              v
+                        Tool results
+                              |
+                              v
+                    Synthesizer (Groq LLM)
+                              |
+                              v
+                     Streamlit response
+```
+
+The planner and synthesizer call Groq through the OpenAI Python client. The data tools perform the actual filtering,
+grouping, aggregation, and statistics with Pandas. LangGraph routes to the tool executor only when the planner sets
+`needs_tools` to `true`; both routes then finish at the synthesizer.
 
 Agent Workflow
 
-The application uses LangGraph to organize the agent workflow.
+The application uses a three-node LangGraph workflow:
 
-User Question
-      |
-      v
-Planning
-      |
-      v
-Determine Required Analysis
-      |
-      v
-Execute Data Analysis Tools
-      |
-      v
-Process Results
-      |
-      v
-Generate Final Answer
-      |
-      v
-Display Answer
+1. **Planner:** sends the current question to Groq and parses a JSON plan. The plan indicates whether tools are needed
+   and, if so, lists tool names and arguments.
+2. **Tool executor (conditional):** runs the requested functions from `tools.py`. Results are passed to later calls
+   when the plan uses the `RESULT_OF_PREVIOUS_CALL` placeholder.
+3. **Synthesizer:** sends the question, plan summary, and tool results to Groq and returns the final text response.
 
-This approach separates the reasoning process from the underlying deterministic data-analysis operations.
+If the planner fails, the graph skips tool execution and the synthesizer returns an availability message. The tools
+operate on the dataset using Pandas, so the LLM plans and summarizes the analysis while the code performs the data
+operations.
 
 Dataset
 
@@ -193,7 +186,7 @@ Tell me about the sales data
 
 Seasonal trend in Technology sales
 
-Users can also enter their own questions through the chat input.
+Users can also enter their own questions through the chat input. The app stores prior turns for display, but each agent invocation currently receives only the latest question; previous turns are not used as LLM context.
 
 Project Structure
 
@@ -510,11 +503,7 @@ Errors are displayed in the Streamlit interface without terminating the complete
 
 Conversation Handling
 
-The Streamlit application maintains conversation history for display.
-
-For agent execution, the application avoids unnecessarily sending the complete previous conversation history to the LLM.
-
-This helps reduce unnecessarily large LLM requests and lowers the risk of exceeding message or completion limits.
+The Streamlit application maintains conversation history for display during the session. Each graph invocation starts with an empty `messages` list, so the planner receives the current question without prior turns as context. Earlier questions and answers remain visible in the UI, but the agent does not use them when answering a new question.
 
 Future Improvements
 
